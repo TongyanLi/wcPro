@@ -8,7 +8,7 @@ import java.io.IOException;
 import org.junit.Test;
 
 
-public class testWriteFile {
+public class writeFileTest {
 	public String getStr(){
 		try {
 	        File file = new File("result.txt");//定义一个file对象，用来初始化FileReader
@@ -73,10 +73,12 @@ public class testWriteFile {
 	
 	@Test
 	public void testWayWriteFile6() {
+		StringBuilder sb = new StringBuilder();
 		String testStr = "";
 		for(int i=0; i<100; i++){
-			testStr = testStr + "abc" + i + " " + i + "\r\n";
+			sb.append("abc" + i + " " + i + "\r\n");
 		}
+		testStr = sb.toString();
 		countWord.writeFile(testStr);
 		String actStr = getStr();
 		assertEquals(testStr,actStr);
@@ -84,10 +86,12 @@ public class testWriteFile {
 	
 	@Test
 	public void testWayWriteFile7() {
+		StringBuilder sb = new StringBuilder();
 		String testStr = "";
 		for(int i=0; i<100; i++){
-			testStr = testStr + "abc" + i + " " + i + "\r\n\r\n";
+			sb.append("abc" + i + " " + i + "\r\n\r\n");
 		}
+		testStr = sb.toString();
 		countWord.writeFile(testStr);
 		String actStr = getStr();
 		assertEquals(testStr,actStr);
@@ -102,10 +106,12 @@ public class testWriteFile {
 	
 	@Test
 	public void testWayWriteFile9() {
+		StringBuilder sb = new StringBuilder();
 		String testStr = "";
 		for(int i=0; i<100; i++){
-			testStr = testStr + "abc" + i + " " + i + "\n";
+			sb.append("abc" + i + " " + i + "\n");
 		}
+		testStr = sb.toString();
 		countWord.writeFile(testStr);
 		String actStr = getStr();
 		assertNotEquals(testStr,actStr);

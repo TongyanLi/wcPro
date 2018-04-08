@@ -22,10 +22,11 @@ public class countWord {
           ArrayList<word> resultArray = tar.getWordArray();
           StringBuilder output = new StringBuilder();
           for(int i=0; i<resultArray.size(); i++){
-            if(i == resultArray.size()-1)
-              output.append(resultArray.get(i).word + " " + resultArray.get(i).num);
-            else
-              output.append(resultArray.get(i).word + " " + resultArray.get(i).num + "\r\n");
+            if(i == resultArray.size()-1){
+	    	output.append(resultArray.get(i).word + " " + resultArray.get(i).num);
+	    }else{
+	    	output.append(resultArray.get(i).word + " " + resultArray.get(i).num + "\r\n");
+	    }
           }
           outStr = output.toString();
           writeFile(outStr);
